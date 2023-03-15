@@ -5,6 +5,7 @@ import com.bijianhua.guli.common.base.result.R;
 import com.bijianhua.guli.service.edu.entity.Chapter;
 import com.bijianhua.guli.service.edu.entity.vo.ChapterVo;
 import com.bijianhua.guli.service.edu.service.ChapterService;
+import com.bijianhua.guli.service.edu.service.VideoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -31,6 +32,12 @@ public class ChapterController {
 
     @Autowired
     private ChapterService chapterService;
+
+    /**
+     * 注入课时
+     */
+    @Autowired
+    private VideoService videoService;
 
 
     @ApiOperation("新增章节")
@@ -74,8 +81,9 @@ public class ChapterController {
     public R removeChapterById(
             @ApiParam(value = "章节id", required = true)
             @PathVariable String id) {
-        //TODO 删除章节下的所有视频信息
-
+        //删除章节下的所有视频信息
+        videoService.removeMediaVideoByChapterId(id);
+        //删除章节信息
         boolean result = chapterService.removeChapterById(id);
         if (!result) {
             return R.error().message("删除失败");
@@ -91,6 +99,7 @@ public class ChapterController {
         List<ChapterVo> chapterVoList = chapterService.nestedList(courseId);
         return R.ok().data("items", chapterVoList);
     }
+
 
 
 }

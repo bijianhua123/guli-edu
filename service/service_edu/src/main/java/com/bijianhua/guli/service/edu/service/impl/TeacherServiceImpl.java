@@ -4,16 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bijianhua.guli.common.base.result.R;
+import com.bijianhua.guli.service.edu.entity.Course;
 import com.bijianhua.guli.service.edu.entity.Teacher;
 import com.bijianhua.guli.service.edu.entity.vo.TeacherQueryVo;
 import com.bijianhua.guli.service.edu.feign.OssFileService;
 import com.bijianhua.guli.service.edu.mapper.TeacherMapper;
+import com.bijianhua.guli.service.edu.service.CourseService;
 import com.bijianhua.guli.service.edu.service.TeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +34,9 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
     //注入openFeign远程调用
     @Autowired
     private OssFileService ossFileService;
+
+    @Autowired
+    private CourseService courseService;
 
     @Override
     public IPage<Teacher> selectPage(Page<Teacher> objectPage, TeacherQueryVo teacherQuery) {
@@ -90,5 +96,18 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
             }
         }
         return false;
+    }
+
+    @Override
+    public Map<String, Object> getTeacherAndCourseById(String teacherId) {
+        //根据id获取讲师
+        Teacher teacher = baseMapper.selectById(teacherId);
+        LambdaQueryWrapper<Course> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(Course::getTeacherId, teacherId);
+        List<Course> courseList = courseService.list(lambdaQueryWrapper);
+        Map<String, Object> map = new HashMap<>();
+        map.put("teacher", teacher);
+        map.put("courseList", courseList);
+        return map;
     }
 }

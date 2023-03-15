@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.InputStream;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -58,6 +59,44 @@ public class VideoServiceImpl implements VideoService {
         request.setVideoIds(videoSourceId);
         //执行删除
         client.getAcsResponse(request);
+    }
+
+    @Override
+    public void removeVideoByIdList(List<String> videoIdList) throws ClientException {
+        DefaultAcsClient client = AliyunClientInitUtil.initVodClient(vodProperties.getKeyid(), vodProperties.getKeysecret());
+        DeleteVideoRequest request = new DeleteVideoRequest();
+        //拼接删除视频的字段
+        StringBuffer stringBuffer = new StringBuffer();
+        /*阿里云批量删除视频规则
+        视频ID列表。
+        由一个或多个视频ID组成，多个ID之间使用半角逗号（,）分隔。最多支持20个。视频ID可通过以下方式获取：
+        StringBuffer拼接考虑:如果长度大于20个，那么就应该执行一次删除，并且清空buffer
+        */
+        //如果视频列表为0则不需要删除
+        if (videoIdList.isEmpty()) {
+            return;
+        }
+        //获取视频列表id长度
+        int size = videoIdList.size();
+        for (int i = 0; i < size; i++) {
+            stringBuffer.append(videoIdList.get(i));
+            //如果i等于size-1就代表以及执行到最后一个添加了 准备执行删除操作,此时不需要逗号
+            //如果i取余数等于19则代表以及满了一个20 了
+            if (i == size - 1 || i % 20 == 19) {
+                log.info("idList=" + stringBuffer);
+                //准备删除
+                //支持传入多个视频ID，多个用逗号分隔
+                request.setVideoIds(stringBuffer.toString());
+                //执行删除
+                client.getAcsResponse(request);
+                //重置stringBuffer
+                stringBuffer = new StringBuffer();
+            } else if (i % 20 < 19) {
+                stringBuffer.append(",");
+            }
+
+        }
+
     }
 
 

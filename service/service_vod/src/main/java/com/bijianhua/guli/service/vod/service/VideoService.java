@@ -4,6 +4,7 @@ package com.bijianhua.guli.service.vod.service;
 import com.aliyuncs.exceptions.ClientException;
 
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * 视频上传接口
@@ -27,4 +28,10 @@ public interface VideoService {
     void removeVideoById(String videoSourceId) throws Exception;
 
 
+    /**
+     * 根据视频Id集合删除视频
+     *
+     * @param videoIdList ID集合
+     */
+    void removeVideoByIdList(List<String> videoIdList) throws ClientException;
 }

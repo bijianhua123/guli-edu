@@ -17,7 +17,7 @@ import java.util.List;
 public interface ChapterService extends IService<Chapter> {
 
     /**
-     * 根据id删除章节信息
+     * 根据章节id删除章节信息
      *
      * @param id
      * @return
@@ -25,9 +25,11 @@ public interface ChapterService extends IService<Chapter> {
     boolean removeChapterById(String id);
 
     /**
-     * 根据课程id获取章节嵌套列表
+     * 根据章节id获取章节嵌套列表
+     *
      * @param id
      * @return
      */
     List<ChapterVo> nestedList(String id);
+
 }

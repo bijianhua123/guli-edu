@@ -7,6 +7,7 @@ import com.bijianhua.guli.service.edu.entity.Course;
 import com.bijianhua.guli.service.edu.entity.Video;
 import com.bijianhua.guli.service.edu.entity.vo.ChapterVo;
 import com.bijianhua.guli.service.edu.entity.vo.VideoVo;
+import com.bijianhua.guli.service.edu.feign.VdoFileService;
 import com.bijianhua.guli.service.edu.mapper.ChapterMapper;
 import com.bijianhua.guli.service.edu.mapper.VideoMapper;
 import com.bijianhua.guli.service.edu.service.ChapterService;
@@ -36,6 +37,12 @@ public class ChapterServiceImpl extends ServiceImpl<ChapterMapper, Chapter> impl
      */
     @Autowired
     private VideoMapper videoMapper;
+
+    /**
+     * 注入open接口
+     */
+    @Autowired
+    private VdoFileService vdoFileService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -83,4 +90,5 @@ public class ChapterServiceImpl extends ServiceImpl<ChapterMapper, Chapter> impl
         }
         return chapterVos;
     }
+
 }

@@ -44,4 +44,12 @@ public interface TeacherService extends IService<Teacher> {
      * @return 是否成功
      */
     boolean removeTeacherAvatarById(String id);
+
+    /**
+     * 根据讲师Id获取讲师和该讲师的课程
+     *
+     * @param teacherId 讲师id
+     * @return 存储讲师和讲师课程的map
+     */
+    Map<String, Object> getTeacherAndCourseById(String teacherId);
 }

@@ -10,6 +10,7 @@ import com.bijianhua.guli.service.edu.entity.vo.CoursePublishVo;
 import com.bijianhua.guli.service.edu.entity.vo.CourseQueryVo;
 import com.bijianhua.guli.service.edu.entity.vo.CourseVo;
 import com.bijianhua.guli.service.edu.service.CourseService;
+import com.bijianhua.guli.service.edu.service.VideoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -37,6 +38,12 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
+    /**
+     * 注入课时实现
+     */
+    @Autowired
+    private VideoService videoService;
 
     @ApiOperation("新增课程")
     @PostMapping("save-course-info")
@@ -90,7 +97,7 @@ public class CourseController {
             @ApiParam(value = "课程id", required = true)
             @PathVariable String id) {
         //TODO 删除课程关联视频 需要通过openFeign调用Oss中的服务 基于nacos
-
+        videoService.removeMediaVideoByCouresId(id);
 
         //TODO 删除课程封面 需要通过openFeign调用Oss中的服务 基于nacos
         boolean b = courseService.removeCoverById(id);

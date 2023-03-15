@@ -63,7 +63,7 @@ public class GlobalExceptionHandler {
         return R.setResult(JSON_PARSE_ERROR);
     }
 
-    //    TODO 自定义异常
+
     @ResponseBody
     @ExceptionHandler(GuliException.class)
     public R GuliException(GuliException e) {

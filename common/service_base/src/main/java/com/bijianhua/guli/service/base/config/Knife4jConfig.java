@@ -24,7 +24,7 @@ import java.util.List;
 @Configuration
 @EnableSwagger2
 public class Knife4jConfig {
-
+    @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("webApi")
@@ -36,7 +36,6 @@ public class Knife4jConfig {
 
     @Bean
     public Docket adminApiConfig() {
-
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("adminApi")
                 .apiInfo(adminApiInfo())
@@ -58,7 +57,6 @@ public class Knife4jConfig {
     }
 
     private ApiInfo adminApiInfo() {
-
         return new ApiInfoBuilder()
                 .title("后台管理系统-API文档")
                 .description("本文档描述了后台管理系统微服务接口定义")

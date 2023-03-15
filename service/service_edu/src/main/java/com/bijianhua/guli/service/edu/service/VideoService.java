@@ -15,5 +15,25 @@ import org.springframework.stereotype.Repository;
 
 public interface VideoService extends IService<Video> {
 
-    void removeMediaVideoById(String id);
+    /**
+     * 根据课时(视频)ID删除云端视频信息
+     *
+     * @param videoId 视频ID
+     */
+    void removeMediaVideoById(String videoId);
+
+    /**
+     * 根据章节ID批量删除云端视频信息
+     *
+     * @param chapterId 章节ID
+     */
+    void removeMediaVideoByChapterId(String chapterId);
+
+    /**
+     * 根据课程ID删除云端视频信息
+     *
+     * @param courseId 课程ID
+     */
+    void removeMediaVideoByCouresId(String courseId);
+
 }

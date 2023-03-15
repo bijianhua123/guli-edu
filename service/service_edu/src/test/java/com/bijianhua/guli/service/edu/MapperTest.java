@@ -20,4 +20,9 @@ public class MapperTest {
         List<SubjectVo> subjectVos = subjectMapper.selectNestedListByParentId("0");
         System.out.println(subjectVos);
     }
+
+    @Test
+    public void test2() {
+        System.out.println((39 % 20) == 19);
+    }
 }
