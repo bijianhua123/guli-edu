@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijianhua.guli.service.edu.mapper.SubjectMapper">
+
+
+    <resultMap id="nestedObj" type="com.bijianhua.guli.service.edu.entity.vo.SubjectVo">
+        <id property="id" column="id"/>
+        <result property="sort" column="sort"/>
+        <result property="title" column="title"/>
+        <collection property="children"
+                    column="id"
+                    select="selectNestedListByParentId"
+                    ofType="com.bijianhua.guli.service.edu.entity.vo.SubjectVo"/>
+
+    </resultMap>
+
+    <select id="selectNestedListByParentId" resultMap="nestedObj">
+        select id, title, sort
+        from _guli_edu.edu_subject
+        where parent_id = #{parentId}
+    </select>
+</mapper>

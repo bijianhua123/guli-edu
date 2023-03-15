@@ -1,0 +1,46 @@
+2023-03-08 19:36:37 |INFO  |main |StartupInfoLogger.java:55 |com.bijianhua.guli.service.edu.ServiceEduApplication |Starting ServiceEduApplication on PC-20201216GNIR with PID 13268 (D:\codes\guli_parent\service\service_edu\target\classes started by Administrator in D:\codes\guli_parent)
+2023-03-08 19:36:37 |INFO  |main |SpringApplication.java:655 |com.bijianhua.guli.service.edu.ServiceEduApplication |The following profiles are active: dev
+2023-03-08 19:36:38 |INFO  |main |PostProcessorRegistrationDelegate.java:330 |org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker |Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 19:36:38 |INFO  |main |TomcatWebServer.java:92 |org.springframework.boot.web.embedded.tomcat.TomcatWebServer |Tomcat initialized with port(s): 8110 (http)
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.coyote.http11.Http11NioProtocol |Initializing ProtocolHandler ["http-nio-8110"]
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.StandardService |Starting service [Tomcat]
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.StandardEngine |Starting Servlet engine: [Apache Tomcat/9.0.27]
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2023-03-08 19:36:38 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-03-08 19:36:39 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2023-03-08 19:36:39 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] |Initializing Spring embedded WebApplicationContext
+2023-03-08 19:36:39 |INFO  |main |ServletWebServerApplicationContext.java:284 |org.springframework.web.context.ContextLoader |Root WebApplicationContext: initialization completed in 2485 ms
+2023-03-08 19:36:41 |INFO  |main |PropertySourcedRequestMappingHandlerMapping.java:69 |springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping |Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-03-08 19:36:41 |INFO  |main |ExecutorConfigurationSupport.java:171 |org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor |Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-08 19:36:41 |INFO  |main |DocumentationPluginsBootstrapper.java:147 |springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper |Context refreshed
+2023-03-08 19:36:41 |INFO  |main |DocumentationPluginsBootstrapper.java:150 |springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper |Found 1 custom documentation plugin(s)
+2023-03-08 19:36:41 |INFO  |main |ApiListingReferenceScanner.java:41 |springfox.documentation.spring.web.scanners.ApiListingReferenceScanner |Scanning for api listing references
+2023-03-08 19:36:41 |INFO  |main |DirectJDKLog.java:173 |org.apache.coyote.http11.Http11NioProtocol |Starting ProtocolHandler ["http-nio-8110"]
+2023-03-08 19:36:41 |INFO  |main |TomcatWebServer.java:204 |org.springframework.boot.web.embedded.tomcat.TomcatWebServer |Tomcat started on port(s): 8110 (http) with context path ''
+2023-03-08 19:36:41 |INFO  |main |StartupInfoLogger.java:61 |com.bijianhua.guli.service.edu.ServiceEduApplication |Started ServiceEduApplication in 5.031 seconds (JVM running for 6.064)
+2023-03-08 19:37:59 |INFO  |SpringContextShutdownHook |ExecutorConfigurationSupport.java:208 |org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor |Shutting down ExecutorService 'applicationTaskExecutor'
+2023-03-08 19:38:04 |INFO  |main |StartupInfoLogger.java:55 |com.bijianhua.guli.service.edu.ServiceEduApplication |Starting ServiceEduApplication on PC-20201216GNIR with PID 17112 (D:\codes\guli_parent\service\service_edu\target\classes started by Administrator in D:\codes\guli_parent)
+2023-03-08 19:38:04 |INFO  |main |SpringApplication.java:655 |com.bijianhua.guli.service.edu.ServiceEduApplication |The following profiles are active: dev
+2023-03-08 19:38:05 |INFO  |main |PostProcessorRegistrationDelegate.java:330 |org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker |Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-08 19:38:05 |INFO  |main |TomcatWebServer.java:92 |org.springframework.boot.web.embedded.tomcat.TomcatWebServer |Tomcat initialized with port(s): 8110 (http)
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.coyote.http11.Http11NioProtocol |Initializing ProtocolHandler ["http-nio-8110"]
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.StandardService |Starting service [Tomcat]
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.StandardEngine |Starting Servlet engine: [Apache Tomcat/9.0.27]
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2023-03-08 19:38:05 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-03-08 19:38:06 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.AprLifecycleListener |OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2023-03-08 19:38:06 |INFO  |main |DirectJDKLog.java:173 |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] |Initializing Spring embedded WebApplicationContext
+2023-03-08 19:38:06 |INFO  |main |ServletWebServerApplicationContext.java:284 |org.springframework.web.context.ContextLoader |Root WebApplicationContext: initialization completed in 2432 ms
+2023-03-08 19:38:08 |INFO  |main |PropertySourcedRequestMappingHandlerMapping.java:69 |springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping |Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-03-08 19:38:08 |INFO  |main |ExecutorConfigurationSupport.java:171 |org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor |Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-08 19:38:08 |INFO  |main |DocumentationPluginsBootstrapper.java:147 |springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper |Context refreshed
+2023-03-08 19:38:08 |INFO  |main |DocumentationPluginsBootstrapper.java:150 |springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper |Found 1 custom documentation plugin(s)
+2023-03-08 19:38:08 |INFO  |main |ApiListingReferenceScanner.java:41 |springfox.documentation.spring.web.scanners.ApiListingReferenceScanner |Scanning for api listing references
+2023-03-08 19:38:08 |INFO  |main |DirectJDKLog.java:173 |org.apache.coyote.http11.Http11NioProtocol |Starting ProtocolHandler ["http-nio-8110"]
+2023-03-08 19:38:08 |INFO  |main |TomcatWebServer.java:204 |org.springframework.boot.web.embedded.tomcat.TomcatWebServer |Tomcat started on port(s): 8110 (http) with context path ''
+2023-03-08 19:38:08 |INFO  |main |StartupInfoLogger.java:61 |com.bijianhua.guli.service.edu.ServiceEduApplication |Started ServiceEduApplication in 5.224 seconds (JVM running for 6.298)
+2023-03-08 19:39:17 |INFO  |SpringContextShutdownHook |ExecutorConfigurationSupport.java:208 |org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor |Shutting down ExecutorService 'applicationTaskExecutor'
