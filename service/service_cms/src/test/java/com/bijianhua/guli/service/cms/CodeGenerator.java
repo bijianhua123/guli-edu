@@ -1,4 +1,4 @@
-package com.bijianhua.guli.service.edu;
+package com.bijianhua.guli.service.cms;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;
@@ -20,7 +20,7 @@ public class CodeGenerator {
     public void genCode() {
 
         //String prefix = "_guli_";
-        String moduleName = "edu";
+        String moduleName = "cms";
 
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();

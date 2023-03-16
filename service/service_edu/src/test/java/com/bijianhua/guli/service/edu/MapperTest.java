@@ -23,6 +23,6 @@ public class MapperTest {
 
     @Test
     public void test2() {
-        System.out.println((39 % 20) == 19);
+        System.out.println(System.getProperty("user.dir"));
     }
 }

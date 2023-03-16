@@ -1,7 +1,8 @@
-package com.bijianhua.guli.service.edu.feign.fallback;
+package com.bijianhua.guli.service.cms.feign.fallback;
 
 import com.bijianhua.guli.common.base.result.R;
-import com.bijianhua.guli.service.edu.feign.OssFileService;
+
+import com.bijianhua.guli.service.cms.feign.OssFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

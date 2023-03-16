@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bijianhua.guli.service.edu.entity.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bijianhua.guli.service.edu.entity.form.CourseInfoForm;
-import com.bijianhua.guli.service.edu.entity.vo.CoursePublishVo;
-import com.bijianhua.guli.service.edu.entity.vo.CourseQueryVo;
-import com.bijianhua.guli.service.edu.entity.vo.CourseVo;
+import com.bijianhua.guli.service.edu.entity.vo.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -84,4 +84,20 @@ public interface CourseService extends IService<Course> {
      * @return
      */
     boolean publishCourseById(String id);
+
+    /**
+     * 根据条件对象查询课程
+     *
+     * @param webCourseQueryVo 条件对象
+     * @return 课程集合
+     */
+    List<Course> webSelectList(WebCourseQueryVo webCourseQueryVo);
+
+    /**
+     * 根据课程Id查询课程详细信息
+     *
+     * @param courserId 课程Id
+     * @return
+     */
+    WebCourseVo selectWebCourseVoById(String courserId);
 }

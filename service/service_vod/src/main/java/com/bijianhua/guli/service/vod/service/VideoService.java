@@ -12,7 +12,7 @@ import java.util.List;
 public interface VideoService {
 
     /**
-     * 上传视频到艾丽云
+     * 上传视频到阿里云
      *
      * @param inputStream      视频输入流
      * @param fileOriginalName 视频原始名称
@@ -34,4 +34,12 @@ public interface VideoService {
      * @param videoIdList ID集合
      */
     void removeVideoByIdList(List<String> videoIdList) throws ClientException;
+
+    /**
+     * 根据视频Id获取阿里云播放凭证
+     *
+     * @param videoId 视频Id
+     * @return 播放凭证Id
+     */
+    String getPlayAuth(String videoId) throws ClientException;
 }

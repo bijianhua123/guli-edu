@@ -8,6 +8,7 @@ import com.bijianhua.guli.service.edu.entity.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bijianhua.guli.service.edu.entity.vo.CoursePublishVo;
 import com.bijianhua.guli.service.edu.entity.vo.CourseVo;
+import com.bijianhua.guli.service.edu.entity.vo.WebCourseVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -33,4 +34,12 @@ public interface CourseMapper extends BaseMapper<Course> {
      * @return
      */
     CoursePublishVo selectCoursePublishVoById(@Param(Constants.WRAPPER) QueryWrapper<Course> queryWrapper);
+
+    /**
+     * 根据课程Id查询课程详细信息
+     *
+     * @param courserId 课程Id
+     * @return
+     */
+    WebCourseVo selectWebCourseVoById(String courserId);
 }

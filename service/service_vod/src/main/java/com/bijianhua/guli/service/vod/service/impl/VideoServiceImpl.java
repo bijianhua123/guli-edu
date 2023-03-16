@@ -7,6 +7,8 @@ import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoResponse;
+import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthRequest;
+import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthResponse;
 import com.bijianhua.guli.common.base.result.ResultCodeEnum;
 import com.bijianhua.guli.service.base.exception.GuliException;
 import com.bijianhua.guli.service.vod.service.VideoService;
@@ -97,6 +99,17 @@ public class VideoServiceImpl implements VideoService {
 
         }
 
+    }
+
+    @Override
+    public String getPlayAuth(String videoId) throws ClientException {
+        DefaultAcsClient client = AliyunClientInitUtil.initVodClient(vodProperties.getKeyid(), vodProperties.getKeysecret());
+        GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest(); //创建请求对象
+        request.setVideoId(videoId); //设置请求参数
+        //发送请求得到响应
+        GetVideoPlayAuthResponse acsResponse = client.getAcsResponse(request);
+        //返回视频播放凭证
+        return acsResponse.getPlayAuth();
     }
 
 
