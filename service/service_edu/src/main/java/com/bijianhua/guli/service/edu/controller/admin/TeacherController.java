@@ -131,13 +131,7 @@ public class TeacherController {
     }
 
 
-    @ApiOperation("测试服务调用")
-    @GetMapping("test")
-    public R test() {
-        R r = ossFileService.test();
-        System.out.println("log.edu执行成功");
-        return R.ok();
-    }
+
 
     @ApiOperation("测试并发")
     @GetMapping("test_concurrent")

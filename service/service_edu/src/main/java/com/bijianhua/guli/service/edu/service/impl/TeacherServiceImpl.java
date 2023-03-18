@@ -110,4 +110,12 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
         map.put("courseList", courseList);
         return map;
     }
+
+    @Override
+    public List<Teacher> selectHotTeacher() {
+        LambdaQueryWrapper<Teacher> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Teacher::getSort);
+        queryWrapper.last("limit 4");
+        return baseMapper.selectList(queryWrapper);
+    }
 }

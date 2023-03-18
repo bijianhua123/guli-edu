@@ -258,5 +258,13 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         return baseMapper.selectWebCourseVoById(courserId);
     }
 
+    @Override
+    public List<Course> selectHotCourse() {
+        LambdaQueryWrapper<Course> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByDesc(Course::getViewCount);
+        queryWrapper.last("limit 8");
+        return baseMapper.selectList(queryWrapper);
+    }
+
 
 }

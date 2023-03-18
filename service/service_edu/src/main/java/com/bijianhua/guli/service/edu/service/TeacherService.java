@@ -52,4 +52,11 @@ public interface TeacherService extends IService<Teacher> {
      * @return 存储讲师和讲师课程的map
      */
     Map<String, Object> getTeacherAndCourseById(String teacherId);
+
+    /**
+     * 获取热门讲师列表(前4)
+     *
+     * @return
+     */
+    List<Teacher> selectHotTeacher();
 }

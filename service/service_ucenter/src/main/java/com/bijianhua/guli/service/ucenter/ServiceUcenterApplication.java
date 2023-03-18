@@ -1,19 +1,19 @@
-package com.bijianhua.guli.service.edu;
-
+package com.bijianhua.guli.service.ucenter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * @author bijianhua
+ * @since 2023/3/18
+ */
 @SpringBootApplication
 @ComponentScan({"com.bijianhua.guli"})
 @EnableDiscoveryClient
-@EnableFeignClients
-public class ServiceEduApplication {
+public class ServiceUcenterApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceEduApplication.class, args);
+        SpringApplication.run(ServiceUcenterApplication.class, args);
     }
 }

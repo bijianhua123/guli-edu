@@ -101,6 +101,7 @@ public class AdTypeController {
             return R.error().message("添加失败");
         }
         return R.ok().message("添加成功");
+
     }
 
 }
