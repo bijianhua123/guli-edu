@@ -2,6 +2,7 @@ package com.bijianhua.guli.service.edu.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.bijianhua.guli.service.base.dto.CourseDto;
 import com.bijianhua.guli.service.edu.entity.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bijianhua.guli.service.edu.entity.form.CourseInfoForm;
@@ -108,4 +109,13 @@ public interface CourseService extends IService<Course> {
      * @return
      */
     List<Course> selectHotCourse();
+
+    /**
+     * 根据课程id获取课程Dto对象
+     * 用于订单信息
+     *
+     * @param courseId 课程id
+     * @return
+     */
+    CourseDto getCourseDtoById(String courseId);
 }

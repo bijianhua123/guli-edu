@@ -4,6 +4,7 @@ package com.bijianhua.guli.service.edu.mapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.bijianhua.guli.service.base.dto.CourseDto;
 import com.bijianhua.guli.service.edu.entity.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bijianhua.guli.service.edu.entity.vo.CoursePublishVo;
@@ -42,4 +43,13 @@ public interface CourseMapper extends BaseMapper<Course> {
      * @return
      */
     WebCourseVo selectWebCourseVoById(String courserId);
+
+    /**
+     * 根据课程id获取课程Dto对象
+     * 用于订单信息
+     *
+     * @param courseId 课程id
+     * @return
+     */
+    CourseDto selectCourseDtoById(String courseId);
 }

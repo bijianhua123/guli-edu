@@ -79,6 +79,17 @@
         WHERE c.id = #{id}
 
     </select>
+    <select id="selectCourseDtoById" resultType="com.bijianhua.guli.service.base.dto.CourseDto">
+        SELECT c.id,
+               c.title,
+               c.price,
+               c.cover,
+               t.`name` AS teacherName
+        FROM edu_course c
+                 JOIN edu_teacher t ON c.teacher_id = t.id
+        WHERE c.id =#{courseId}
+
+    </select>
 
 
 </mapper>

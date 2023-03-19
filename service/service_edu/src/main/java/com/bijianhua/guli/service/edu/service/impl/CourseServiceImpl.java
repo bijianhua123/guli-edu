@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bijianhua.guli.common.base.result.R;
+import com.bijianhua.guli.service.base.dto.CourseDto;
 import com.bijianhua.guli.service.edu.entity.*;
 import com.bijianhua.guli.service.edu.entity.form.CourseInfoForm;
 import com.bijianhua.guli.service.edu.entity.vo.*;
@@ -69,6 +70,10 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
      */
     @Autowired
     private CourseCollectService courseCollectService;
+
+
+    @Autowired
+    private TeacherService teacherService;
 
 
     @Transactional(rollbackFor = Exception.class)
@@ -265,6 +270,26 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         queryWrapper.last("limit 8");
         return baseMapper.selectList(queryWrapper);
     }
+
+    public CourseDto getCourseDtoById(String courseId) {
+        return baseMapper.selectCourseDtoById(courseId);
+    }
+    //@Override
+    //public CourseDto getCourseDtoById(String courseId) {
+    //    //根据课程id获取课程信息
+    //    Course course = baseMapper.selectById(courseId);
+    //    //根据课程id中的讲师id获取讲师信息
+    //    Teacher teacher = teacherService.getById(course.getTeacherId());
+    //    //创建Dto对象
+    //    CourseDto courseDto = new CourseDto();
+    //    //组装Dto对象
+    //    courseDto.setId(course.getId());
+    //    courseDto.setCover(course.getCover());
+    //    courseDto.setPrice(course.getPrice());
+    //    courseDto.setTitle(course.getTitle());
+    //    courseDto.setTeacherName(teacher.getName());
+    //    return courseDto;
+    //}
 
 
 }

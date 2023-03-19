@@ -29,7 +29,6 @@ public class ApiSmsController {
             @ApiParam(value = "手机号", required = true)
             @PathVariable String phone) {
 
-
         return smsService.sendCode(phone);
 
 
